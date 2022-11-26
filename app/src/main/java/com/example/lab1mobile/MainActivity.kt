@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     val alarms = ArrayList<Alarm>()
@@ -14,10 +12,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button: Button = findViewById(R.id.button)
-        button.setOnClickListener {
+        val buttonCreator: Button = findViewById(R.id.button)
+        buttonCreator.setOnClickListener {
             val creatorActivity = Intent(this, CreatorActivity::class.java)
             startActivity(creatorActivity)
+        }
+
+        val buttonJournal: Button = findViewById(R.id.button4)
+        buttonJournal.setOnClickListener {
+            val journalActivity = Intent(this, JournalActivity::class.java)
+            startActivity(journalActivity)
         }
     }
 }
